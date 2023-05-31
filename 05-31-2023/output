@@ -1,0 +1,76 @@
+* Manalyze 0.9 *
+
+-------------------------------------------------------------------------------
+/home/remnux/malware/05-30-2023_2nd/./Firstexe.exe
+-------------------------------------------------------------------------------
+
+Sections:
+---------
+.text:
+    MD5:                  88346c328c9a5f3be92cd97674f6c523
+    SHA1:                 a7aaed48cebec5db02c34e5af94d2e1ca660430a
+    SHA256:               b7004f352f0ece4742964b09bea123ba29bd589f139466db731b49e8b88cc590
+    SHA3:                 7941de421341a6097a9830f1b675396549fff39345a746018822ea020492445a
+    VirtualSize:          0x0000C1D4
+    VirtualAddress:       0x00002000
+    SizeOfRawData:        0x0000C200
+    PointerToRawData:     0x00000200
+    PointerToRelocations: 0x00000000
+    PointerToLineNumbers: 0x00000000
+    NumberOfLineNumbers:  0
+    NumberOfRelocations:  0
+    Characteristics:      IMAGE_SCN_CNT_CODE
+                          IMAGE_SCN_MEM_EXECUTE
+                          IMAGE_SCN_MEM_READ
+    Entropy:              5.97774
+
+.rsrc:
+    MD5:                  62720da5b5c6be6b9ff77941f2c0c1c5
+    SHA1:                 684bf929b14cbf25ecfaa64c9c8c9e1cc1f921f4
+    SHA256:               31b6a8f59ebabbd181773c4ddea3a260da052a15f4a041a73c96e305b14f8b2a
+    SHA3:                 762af47144a387bb350f03ac50f1a04dcf89d44d9417d6b8d61f08e3b0c1bdd4
+    VirtualSize:          0x00000354
+    VirtualAddress:       0x00010000
+    SizeOfRawData:        0x00000400
+    PointerToRawData:     0x0000C400
+    PointerToRelocations: 0x00000000
+    PointerToLineNumbers: 0x00000000
+    NumberOfLineNumbers:  0
+    NumberOfRelocations:  0
+    Characteristics:      IMAGE_SCN_CNT_INITIALIZED_DATA
+                          IMAGE_SCN_MEM_READ
+    Entropy:              2.70262
+
+.reloc:
+    MD5:                  68776316053061996170606be3cf230c
+    SHA1:                 a77f28e5eff89621bc2949b83c4bc598a32e0bca
+    SHA256:               86ab03a99b07139e57f31308353d3073a1df244b19dcfe83bf8bab909d0a6725
+    SHA3:                 ffa3ca02e7ab93d9af2f966d54fd2b61dd23d0bf58ff41310e1db62ed4c3df0c
+    VirtualSize:          0x0000000C
+    VirtualAddress:       0x00012000
+    SizeOfRawData:        0x00000200
+    PointerToRawData:     0x0000C800
+    PointerToRelocations: 0x00000000
+    PointerToLineNumbers: 0x00000000
+    NumberOfLineNumbers:  0
+    NumberOfRelocations:  0
+    Characteristics:      IMAGE_SCN_CNT_INITIALIZED_DATA
+                          IMAGE_SCN_MEM_DISCARDABLE
+                          IMAGE_SCN_MEM_READ
+    Entropy:              0.0815394
+
+
+Imports:
+--------
+mscoree.dll: _CorDllMain
+
+Hashes:
+-------
+MD5:          8bbc7b8bf97fc927cb383bca7d0a794c
+SHA1:         a2b2d9cb3435f205687b955712628bdabb0cd3b0
+SHA256:       fe14b946dd8cd5d7b518baafd0fbb39d244e9453073b14388a2764c29562c0ce
+SHA3:         6279f0eea046d55123aff5616249495345b75b92655ac3ecb407783ae69fbc8e
+SSDeep:       768:/udOaL4JC+VMxjHwPEjxn/HsFgeZvKmJJ5Yu+x/2lJ2+zOrbJneq+0/2fU/l:/udO2NjHwPGlWrZ11+d2lo+inJC0ld
+Imports Hash: dae02f32a21e03ce65412f6e56942daa
+
+

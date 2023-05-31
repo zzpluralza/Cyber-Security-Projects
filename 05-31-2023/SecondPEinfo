@@ -1,0 +1,92 @@
+XLMMacroDeobfuscator: pywin32 is not installed (only is required if you want to use MS Excel)
+
+
+--------------------------------------------------------------------------------
+File Information (time: 0:00:00.791558)
+--------------------------------------------------------------------------------
+filename         Secondexe.exe
+filetype         PE32 executable (GUI) Intel 80386 Mono/.Net assembly, for MS Wi
+filesize         67584
+hash sha256      8da2ee52332138905d6c21a8c2fd16c1ccb16aa057b64df7e66f2bd38664e86f
+virustotal       /
+imagebase        0x400000
+entrypoint       0x11a5e
+imphash          f34d5f2d4577ed6d9ceec516c1f5a744
+datetime         2023-04-10 22:36:37
+dll              False
+directories      import, tls, resources, relocations
+sections         .text, .rsrc, .reloc
+features         packer
+
+
+--------------------------------------------------------------------------------
+Yara Plugins
+--------------------------------------------------------------------------------
+IsPE32
+IsNET EXE
+IsWindowsGUI
+
+
+--------------------------------------------------------------------------------
+Behavior
+--------------------------------------------------------------------------------
+DebuggerCheck  RemoteAPI
+anti dbg
+Xor
+keylogger
+win hook
+
+
+--------------------------------------------------------------------------------
+Packer
+--------------------------------------------------------------------------------
+Microsoft Visual Studio NET
+Microsoft Visual C v70 Basic NET additional
+Microsoft Visual C Basic NET
+Microsoft Visual Studio NET additional
+Microsoft Visual C v70 Basic NET
+NET executable 
+NET executable
+
+
+--------------------------------------------------------------------------------
+Sections Suspicious
+--------------------------------------------------------------------------------
+For each section the value of entropy is less than 6
+
+
+--------------------------------------------------------------------------------
+Metadata
+--------------------------------------------------------------------------------
+Comments         
+CompanyName      
+FileDescription  
+FileVersion      1.0.0.0
+InternalName     Stub.exe
+LegalCopyright   
+LegalTrademarks  
+OriginalFilename Stub.exe
+ProductName      
+ProductVersion   1.0.0.0
+Assembly Version 1.0.0.0
+
+
+--------------------------------------------------------------------------------
+Import function
+--------------------------------------------------------------------------------
+mscoree.dll      1
+
+
+--------------------------------------------------------------------------------
+Url
+--------------------------------------------------------------------------------
+http://schemas.microsoft.com/SMI/2005/WindowsSettings
+
+
+--------------------------------------------------------------------------------
+File
+--------------------------------------------------------------------------------
+kernel32.dll     Library
+user32.dll       Library
+ntdll.dll        Library
+mscoree.dll      Library
