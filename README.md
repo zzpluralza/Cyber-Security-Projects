@@ -1,1 +1,1 @@
-This respository contains my malware analysis reports, supporting files and write ups of projects I have done learning cybersecurity.
+This respository contains my malware analysis reports and supporting files, PowerShell and Python scripts and cybersecurity project notes.
