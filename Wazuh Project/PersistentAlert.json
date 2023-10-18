@@ -1,0 +1,73 @@
+{
+  "agent": {
+    "ip": "FE80:0000:0000:0000:29F9:CAA8:930B:5211",
+    "name": "DESKTOP-U1KNHMV",
+    "id": "002"
+  },
+  "manager": {
+    "name": "Wzhmain"
+  },
+  "data": {
+    "win": {
+      "eventdata": {
+        "serviceType": "kernel mode driver",
+        "imagePath": "\\\\SystemRoot\\\\system32\\\\DRIVERS\\\\npcap.sys",
+        "startType": "demand start",
+        "serviceName": "Npcap Packet Driver (NPCAP) (Wi-Fi)"
+      },
+      "system": {
+        "eventID": "7045",
+        "eventSourceName": "Service Control Manager",
+        "keywords": "0x8080000000000000",
+        "providerGuid": "{555908d1-a6d7-4695-8e1e-26931d2012f4}",
+        "level": "4",
+        "channel": "System",
+        "opcode": "0",
+        "message": "\"A service was installed in the system.\r\n\r\nService Name:  Npcap Packet Driver (NPCAP) (Wi-Fi)\r\nService File Name:  \\SystemRoot\\system32\\DRIVERS\\npcap.sys\r\nService Type:  kernel mode driver\r\nService Start Type:  demand start\r\nService Account:  \"",
+        "version": "0",
+        "systemTime": "2023-10-17T00:52:25.2375114Z",
+        "eventRecordID": "6588",
+        "threadID": "4436",
+        "computer": "DESKTOP-U1KNHMV",
+        "task": "0",
+        "processID": "916",
+        "severityValue": "INFORMATION",
+        "providerName": "Service Control Manager"
+      }
+    }
+  },
+  "rule": {
+    "firedtimes": 1,
+    "mail": false,
+    "level": 5,
+    "description": "New Windows Service Created",
+    "groups": [
+      "windows",
+      "windows_system"
+    ],
+    "mitre": {
+      "technique": [
+        "Windows Service"
+      ],
+      "id": [
+        "T1543.003"
+      ],
+      "tactic": [
+        "Persistence",
+        "Privilege Escalation"
+      ]
+    },
+    "id": "61138"
+  },
+  "decoder": {
+    "name": "windows_eventchannel"
+  },
+  "input": {
+    "type": "log"
+  },
+  "@timestamp": "2023-10-17T00:52:25.366Z",
+  "location": "EventChannel",
+  "id": "1697503945.57746",
+  "timestamp": "2023-10-16T18:52:25.366-0600",
+  "_id": "BxceO4sBPnZG_HfYsNGq"
+}
