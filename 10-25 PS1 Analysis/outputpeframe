@@ -1,0 +1,99 @@
+XLMMacroDeobfuscator: pywin32 is not installed (only is required if you want to use MS Excel)
+
+
+--------------------------------------------------------------------------------
+File Information (time: 0:00:03.184663)
+--------------------------------------------------------------------------------
+filename         stage2.exe
+filetype         PE32 executable (GUI) Intel 80386 Mono/.Net assembly, for MS Wi
+filesize         48640
+hash sha256      b99b8c52dd67d2a9d4b8a58664056b7ce64f271e25efe3a3b8adf33c70d3db46
+virustotal       /
+imagebase        0x400000
+entrypoint       0xcbce
+imphash          f34d5f2d4577ed6d9ceec516c1f5a744
+datetime         2021-05-05 21:11:39
+dll              False
+directories      import, tls, resources, relocations
+sections         .text, .rsrc, .reloc
+features         packer, crypto
+
+
+--------------------------------------------------------------------------------
+Yara Plugins
+--------------------------------------------------------------------------------
+IsPE32
+IsNET EXE
+IsWindowsGUI
+Big Numbers3
+NETexecutableMicrosoft
+
+
+--------------------------------------------------------------------------------
+Behavior
+--------------------------------------------------------------------------------
+Xor
+win mutex
+
+
+--------------------------------------------------------------------------------
+Crypto
+--------------------------------------------------------------------------------
+Big Numbers3
+
+
+--------------------------------------------------------------------------------
+Packer
+--------------------------------------------------------------------------------
+Microsoft Visual Studio NET
+Microsoft Visual C v70 Basic NET additional
+Microsoft Visual C Basic NET
+Microsoft Visual Studio NET additional
+Microsoft Visual C v70 Basic NET
+NET executable 
+NET executable
+
+
+--------------------------------------------------------------------------------
+Sections Suspicious
+--------------------------------------------------------------------------------
+For each section the value of entropy is less than 6
+
+
+--------------------------------------------------------------------------------
+Metadata
+--------------------------------------------------------------------------------
+Comments         
+CompanyName      
+FileDescription  
+FileVersion      1.0.7.0
+InternalName     Client.exe
+LegalCopyright   
+LegalTrademarks  
+OriginalFilename Client.exe
+ProductName      
+ProductVersion   1.0.7.0
+Assembly Version 1.0.7.0
+
+
+--------------------------------------------------------------------------------
+Import function
+--------------------------------------------------------------------------------
+mscoree.dll      1
+
+
+--------------------------------------------------------------------------------
+Url
+--------------------------------------------------------------------------------
+http://schemas.microsoft.com/SMI/2016/WindowsSettings
+http://schemas.microsoft.com/SMI/2005/WindowsSettings
+
+
+--------------------------------------------------------------------------------
+File
+--------------------------------------------------------------------------------
+ClientIva21.exe  Executable
+kernel32.dll     Library
+user32.dll       Library
+ntdll.dll        Library
+mscoree.dll      Library
