@@ -1,0 +1,28 @@
+title: Wave Browser Dectector
+description: Detect installation of Wave Browser by Wavesor. This is a Chromium based browser that has installed without users approving and installs in the root \Users\<user profile>\ directory.
+date: 2023/11/07
+author: Garrett Burt
+status: experimental
+
+logsource:
+  product: windows
+  category: file_access
+ 
+detection:
+  selection:
+    OriginalFileName:
+      - 'wavebrowser.exe'
+      - 'WaveBrowser.exe'
+      - 'Wavebrowser.exe'
+      - 'SWUpdater.exe'
+      - 'wave browser.exe'
+      
+  selection_kw:
+    keywords:
+      - Wavesor
+      - wavebrowser.exe
+
+condition: 1 of selection and 1 of selection_kw
+
+level: low
+
