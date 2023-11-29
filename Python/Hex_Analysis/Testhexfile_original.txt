@@ -1,0 +1,19 @@
+This is a test file that will have random sections of hex data. 
+Here is some dumb code:
+$get-service #Powershell code
+Some HTML code:
+ <!--Model Popup -->
+    <style type="text/css">
+        .modal:nth-of-type(even) {
+            z-index: 1000001 !important;
+        }
+
+        #loader {
+            background: rgba(0, 0, 0, .7);
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            z-index: 1000002;
+            height: 100%;
+            width: 100%;
+        }

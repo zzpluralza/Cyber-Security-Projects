@@ -1,0 +1,19 @@
+This is a test file that will have random sections of hex data. 
+Here is some dumb code:
+$g65%74%2d%73%65%72%76%69%63%65%20%23%50%6f%77%65%72%73%68%65%6c%6c%20%63%6f%64%65
+Some HTML code:
+ <!--Model Popup -->
+    <style type="text/css">
+20%20%20%20%20%20%20%20%2e%6d%6f%64%61%6c%3a%6e%74%68%2d%6f%66%2d%74%79%70%65%28%65%76%65%6e%29%20%7b
+            z-index: 1000001 !important;
+        }
+
+        #loader {
+            background: rgba(0, 0, 0, .7);
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            z-index: 1000002;
+            height: 100%;
+            width: 100%;
+        }
