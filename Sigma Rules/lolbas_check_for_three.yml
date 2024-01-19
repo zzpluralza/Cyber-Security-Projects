@@ -1,0 +1,28 @@
+#Sigma rule checking for some lolbins
+# cscript.exe, mshta.exe and scriptrunner.exe 
+# This is an exercise in creating sigma rules
+title: Check For LOLBAS
+description: This checks for three lolbas files, cscript.exe, mshta.exe, scriptrunner.exe
+date: 2024/01/19
+author: Garrett Burt
+status: test
+tags:
+  - Living off the Land
+
+logsource:
+  product: windows
+  category: process_creation
+
+detection:
+  selection_image:
+    - image|contains: #Check if this is in the image name, maybe if cmd or other application launching these
+      - 'scriptrunner.exe'
+      - 'cscript.exe'
+      - 'mshta.exe'
+
+condition: all of selection_image
+
+level: medium
+
+
+

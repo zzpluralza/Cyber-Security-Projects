@@ -1,0 +1,29 @@
+#Sigma Rule to look for applications running vbs, vba, js, ps1 files
+title: Script Files Running
+date: 01/19/2024
+author: Garrett Burt
+description: Looks for any binary trying to run vbs, vba, js, ps1 files
+status: test
+tags:
+  - Living Off the Land
+  - Scripts
+
+logsource:
+  product: windows
+  category: scripts
+
+selection:
+  running_scripts:
+    image|contains:
+      - '.ps1'
+      - '.js'
+      - '.vbs'
+      - '.vba'
+
+
+  condition: running_scripts
+
+falsepositives:
+  - There are legitimate reason to run script files. Need to verify what is triggering these
+
+level: low
