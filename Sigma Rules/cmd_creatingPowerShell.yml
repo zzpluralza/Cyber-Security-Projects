@@ -1,0 +1,27 @@
+#Check if CMD spawns PowerShell - usually what happens when malware calls Powershell
+
+title: Detect CMD spawning Powershell
+description: Detects when CMD spawns PowerShell 
+date: 2023/11/07
+author: Garrett Burt
+status: experimental
+tags:
+	- 'T1547.001'
+	- 'Powershell'
+
+detection:
+	selectionparent:
+		ParentImage:
+			- 'cmd.exe'
+			- 'CMD.EXE'
+
+	selectionchild:
+		Image|contains:
+			- '\powershell.exe'
+			- 'powershell.exe'
+
+	condition:
+		1 of selectionparent and all of selectionchild	
+
+
+
