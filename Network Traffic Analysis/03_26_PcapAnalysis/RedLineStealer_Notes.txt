@@ -1,0 +1,78 @@
+Network Traffic Analysis
+
+https://unit42.paloaltonetworks.com/wireshark-quiz-redline-stealer/
+
+Infected host: 10.7.10.47 -- DESKTOP-9PEA63 Mac Address: 80:86:5b:ab:1e:c4
+Server: 10.7.10.9 -- Dell system - Mac Address: 10:98:36:f4:95:c1 (DC and DNS server)
+
+194.26.135.119 - Mac Address: 00:b:64:98:ad:54 - Indicates Cisco (firewall or router maybe?)
+
+
+- Opened PCAP in Wireshark
+- Filter: frame contains "file"
+-- Revealed conversation between 10.7.10.47 and 194.26.135.119
+-- 194.26.135.119
+-- 10.7.10.47 - infected host
+-- Stealing crypto wallets
+-- ID = Red Canary
+-- Infected system began conversation with the malsite
+-- All conversation using TCP protocol
+-- Port 194.26.135.119 = 12432
+-- Port 10.7.10.47 = 49744
+-- Looks for documents, wallets, etc. within the Userprofile\Desktop and Documents
+-- Also looks in Chrome's AppData 
+-- Also checks Firefox
+-- Getting credentials for Azure and Amamzon
+
+-- Powershell call: powershell.exe, CommandLine: "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" "-Command" "if((Get-ExecutionPolicy ) -ne 'AllSigned') { Set-ExecutionPolicy -Scope Process Bypass }; & 'C:\Users\rwalters\Documents\mystery_file.ps1
+-- Gathered system information
+-- Obtained user email and password in plain text
+
+
+Domains / URLs:
+coolweathercoat.com
+guiatelefonos.com
+https://www.overcoats-r-us.com
+
+Workstations/Servers
+WIN-S3WT6LGQFVX (part of coolweathercoat.com domain)
+
+
+System was infected. It began communication with 194.26.135.119
+Began running commands on the infected system, providing any info it could on crypto wallets on the system
+
+Total packets in conversation with infected system and malsite = 787
+
+Looks like in the conversation it took all the info and put into a word docx file called Top_secret_ducment.docx, placed in the user's Documents directory
+
+Checked who else 10.7.10.47 had conversations with.
+Bunch of packets to 10.7.10.9 -- Possible DC server
+-- Name as seen on network is WIN-S3WT6LGQFVX
+
+
+First packet to 194.26.135.119 was at 22:39:50.151051 (UTC)
+Last packet to 194.26.135.119 was at 22:39:58.364177 (UTC)
+
+Total packet capture from
+22:39:22.849048 to 22:39:58.364177
+
+Need to understand what are NBNS, CLDAP, KRB5 packets
+
+Second malicious IP 204.79.197.200 - Appears to be a MS Azure Cloud account takeover - Possibly used by the attacker to send the docx file over. Can't tell since many packets are encrypted (TLS 1.2), don't have the keys to decrypt it.
+Conversation started by infected system at 22:39:34.644850 to 22:39:43.986040
+
+notable packets
+215 - 22:39:23.594750 (UTC) SMB call to the server IPC$
+SMB@ ..... \\WIN-S3WT6LGQFVX.coolweathercoat.com\IPC$
+-- Getting info from server. Is this normal or is it the malware trying to find a domain controller or file server?
+
+Wireshark filters I used:
+frame contains "file"
+ip.addr == 194.26.135.119
+ip.addr == 10.7.10.47
+frame contains "docx"
+ip.src == 10.7.10.47
+ip.addr == 204.79.197.200
+
+
+
