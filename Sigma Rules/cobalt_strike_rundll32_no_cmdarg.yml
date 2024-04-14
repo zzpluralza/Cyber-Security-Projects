@@ -1,0 +1,25 @@
+title: Colbalt Strike Indicator With Rundll32
+status: testing
+description: Detcting Cobalt Strike with rundll32 that have no commandline arguments. This is a big indicator of Cobalt Strike is present on the system. 
+
+references:
+  - https://redcanary.com/threat-detection-report/techniques/rundll32/
+
+author: Garrett Burt
+date: 04/13/2024
+tags:
+  - Cobalt Strike
+  - Rundll32
+
+logsource:
+  product: windows
+  category: file_executable_detected
+
+detection:
+  selection:
+    TargetFileName: 'rundll32.exe'
+    commandLine|contains: ''
+
+  condition: selection
+
+  level: medium
