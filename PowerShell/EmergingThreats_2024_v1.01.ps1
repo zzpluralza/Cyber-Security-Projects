@@ -1,4 +1,3 @@
-﻿
 <# 
 All Purpose Emerging Threats 2024
 Based on Sigma Rules: https://github.com/SigmaHQ/sigma/blob/master/rules-emerging-threats/2024/Malware/
@@ -24,13 +23,13 @@ $today = get-date -format o
 $today = $today.split("T")
 $Outputfile = $systemname + "_" + $today[0] + ".txt"
 
-write-host "Output file is in the same location the script is run from. File name is: " + $Outputfile
+write-host "Output file is in the same location the script is run from. File name is: $Outputfile"
 
 #Getting full list of running processes
 $proclist = gwmi win32_process | select processname, processid, parentprocessid, commandline, path
 
-write-host "Searching emerging threats for " + $systemname
-"Searching emerging threats for " + $systemname | Out-File $Outputfile
+write-host "Searching emerging threats for $systemname"
+"Searching emerging threats for $systemname" | Out-File $Outputfile
 
 #Large loop reviewing running processes for hints of specific malware families
 foreach ($proc in $proclist) {
@@ -52,19 +51,19 @@ foreach ($proc in $proclist) {
             "Parent process is: " + $parentproc.processname | out-file $Outputfile -append          
         }
         elseif (($proc.processname -eq "Autoit3.exe") -and ($proc.commandline -match "msiexec\.exe")) {
-            write-host "Possible DarkGate infection at: " + $proc.ProcessName + ". ProcessID: " + $proc.processid + "."
-            "Possible DarkGate infection at: " + $proc.ProcessName + ". ProcessID: " + $proc.processid + "." | out-file $Outputfile -append
-            write-host "Parent process is: " + $parentproc.processname
-            "Parent process is: " + $parentproc.processname | out-file $Outputfile -append          
+            write-host "Possible DarkGate infection at: $proc.ProcessName. ProcessID: $proc.processid."
+            "Possible DarkGate infection at: $proc.ProcessName. ProcessID: $proc.processid." | out-file $Outputfile -append
+            write-host "Parent process is: $parentproc.processname. ProcessID: $parentproc.processid."
+            "Parent process is: $parentproc.processname. ProcessID: $parentproc.processid."| out-file $Outputfile -append          
         }
       
     } 
     elseif (($proc.ProcessName -eq "net.exe") -or ($proc.ProcessName -eq "net1.exe")) {
         if (($proc.commandline -match "user") -and ($proc.commandline -match "add") -and ($proc.commandline -match "DarkGate")) {
-            write-host "Possible DarkGate infection at: " + $proc.ProcessName + ". ProcessID: " + $proc.processid + "."
-            "Possible DarkGate infection at: " + $proc.ProcessName + ". ProcessID: " + $proc.processid + "." | out-file $Outputfile -append
-            write-host "Parent process is: " + $parentproc.processname
-            "Parent process is: " + $parentproc.processname | out-file $Outputfile -append          
+            write-host "Possible DarkGate infection at: $proc.ProcessName. ProcessID:$proc.processid."
+            "Possible DarkGate infection at: $proc.ProcessName. ProcessID:$proc.processid." | out-file $Outputfile -append
+            write-host "Parent process is: $parentproc.processname. ProcessID: $parentproc.processid."
+            "Parent process is: $parentproc.processname. ProcessID: $parentproc.processid."| out-file $Outputfile -append          
         }
     }   
         
