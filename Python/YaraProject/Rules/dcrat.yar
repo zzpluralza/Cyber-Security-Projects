@@ -10,11 +10,27 @@ rule dcrat {
     $a1 = "RaiseException"
     $a2 = "ShellExecute"
     $a3 = "IsDebuggerPresent"
-    $a4 = "pastebin.com" ascii wide
+    $a4 = "pastebin.com" ascii
     $a5 = "UploadData"
     $a6 = "GETPASSWORD"
 
   condition:
     all of them
 
+}
+
+
+rule moredcrat {
+  meta:
+    description = "Additional DCRat detection rule. Part of Yara training."
+
+  strings:
+    $dc1 = "Queue`1"
+    $dc2 = "Stack`1"
+    $dc3 = "KeyValuePair`2"
+    $dc4 = "Mutex"
+    $dc5 = "PublicKeyToken="
+
+  condition:
+    all of them
 }
