@@ -6,7 +6,7 @@ program_array = ["Notepad++", "Word Perfect 14", "Adobe Photoshop CS6", "WebNavi
 Desktop_names = ["DESKTOP-FJ8K7F", "DESKTOP-Main", "FrontDesk", "DC01", "FileServer01", "QuickbooksSystem", "DESKTOP-JJ5480", "HP-LAPTOP", "DESKTOP-24JKF37", "BackOffice", "QB-Server", "Lab-System", "Bill-Computer", "CEO", "FinanceComputer", "HP-ZBook"] #16
 
 columnnames = ["NAME", "FRIENDLY_NAME", "DEVICE_TYPE", "SITE_NAME", "SITE_UNIQUE_ID", "OS", "IP_ADDRESS", "APPLICATION_NAME", "VERSION", "PUBLISHER", "INSTALL_DATE", "LAST_LOGGED_ON_USER", "DATE_CHECKED"]
-"""
+
 out_file = "big_sample.csv"
 
 with open(out_file, 'w') as resultfile:
@@ -22,5 +22,4 @@ with open(out_file, 'w') as resultfile:
 		rows = [dname, dname, "Desktop", "Magrathea Inc.","0","Windows","0",app,"1.002","Unknown","0","0","0"]
 		writer.writerows([rows])
 
-"""
-print (len(program_array))
+#print (len(program_array))
