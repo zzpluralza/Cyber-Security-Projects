@@ -1,5 +1,6 @@
 #12-11-2025 - Cybersecurity research
 #Script to anlayze csv file containing list of installed programs for entire set of computers. Identifies installed PUAs and exports the complete list of computers and installed PUAs
+#List of matcharray is incomplete
 
 $inputfile = "big_sample.csv"
 $outputfile= "outputfile.csv"
